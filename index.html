@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>You  Sylvia</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="garden.js"></script>
+<script type="text/javascript" src="functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code" style="margin-top: 0px;">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2017—07-02,</span><br />
+			<span class="space"/><span class="comments">*2017-07-22.</span><br />
+			<span class="space"/><span class="comments">**/</span><br />
+			Girl name = <span class="keyword">Sylvia</span><br />
+			<span class="keyword">20</span> days ago<br />
+			<span class="comments">// I met you. </span><br />
+			<br />
+			<span class="keyword">125</span>万人生活在这个城市<br />
+			其中<span class="keyword">1/2</span>是男性<br />
+			那么就剩下<span class="keyword">62.5</span>万人<br />
+			然后  我想你大概会更愿意和年龄相仿的男性交往<br />
+			大概有<span class="keyword">1/4</span>吧<br />
+			现在还有<span class="keyword">15</span>万人了<br />
+			这些人也不会全是单身吧<br />
+			最多也就一半<br />
+			那么仍有<span class="keyword">7.5</span>万人<br />
+			但你也会有自己的要求和骄傲<br />
+			你还是蛮挑剔的<br />
+			你同意吧<br />
+			那么  这些人中又有多少能入你的法眼呢<br />
+			<span class="keyword">20</span>个里能有一个就不错了  是吧<br />
+			这样算下来还有几个呢<br />
+			<span class="keyword">3750</span>个单身又有魅力的候选人<br />
+			从我们这座<span class="keyword">125</span>万人的城市脱颖而出<br />
+			这与这些人的交往中  你会对多少人厌倦呢<br />
+			我想  大多数吧<br />
+			所以  是不是可以这么说<br />
+			大概<span class="keyword">1/20</span>的人会让你觉得有趣<br />
+			他们都会觉得你有魅力<br />
+			没人会认为你无趣的  那么<br />
+			这么多人中有几个愿意给你做早餐<br />
+			愿意给你买卫生巾<br />
+			愿意逗你开心<br />
+			没准  <span class="keyword">1/10</span>吧<br />
+			现在我们还剩<span class="keyword">18.75</span>个<br />
+			<span class="keyword">18</span>个人<br />
+			接下来的事就是来不来电<br />
+			比如是否相信同样的事情<br />
+			是否喜欢同样的音乐和电影<br />
+			等等<br />
+			所以  如果运气好的话<br />
+			和你兴趣相同的人大概有  我猜不到<br />
+			假设一下  大概<span class="keyword">1/30</span><br />
+			<span class="keyword">1/30</span>人啊<br />
+			现在是多少人了呢<br />
+			<span class="keyword">0.6</span><br />
+			这<span class="keyword">125</span>万人的城市里只有<span class="keyword">0.6</span>个人可能是你的灵魂伴侣<br />
+			你要如何遇见这个人呢<br />
+			命运吧<br />
+			只是<br />
+			刚开始似乎所有证明都是对的<br />
+			但如果存在变量<span class="keyword">X</span>的话<br />
+			也许<br />
+			也许命运就是那个变量呢<br />
+			也许吧<br />
+			<br />
+			<span class="keyword">0.6 * X = 1</span><br />
+			<span style="color:#fff">遇见你真好</span><br />
+			<span style="color:#fff">白茶清欢别无事</span><br />
+			<span style="color:#fff">我在等风也等你</span><br />
+
+
+
+		</div>
+
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+var together = new Date();
+together.setFullYear(2017, 4, 16);
+together.setHours(0);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</div>
+</body>
+</html>
