@@ -3,34 +3,85 @@
 <head>
 <meta charset="utf-8">
 <title>Your Sylvia </title>
+
+
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+<script type="text/javascript">
+function setTab(name,cursel){
+ cursel_0=cursel;
+ for(var i=1; i<=links_len; i++){
+  var menu = document.getElementById(name+i);
+  var menudiv = document.getElementById("con_"+name+"_"+i);
+  if(i==cursel){
+   menu.className="off";
+   menudiv.style.display="block";
+  }
+  else{
+   menu.className="";
+   menudiv.style.display="none";
+  }
+ }
+}
+function Next(){
+ cursel_0++;
+ if (cursel_0>links_len)cursel_0=1
+ setTab(name_0,cursel_0);
+}
+var name_0='one';
+var cursel_0=1;
+var ScrollTime=3000;//循环周期（毫秒）
+var links_len,iIntervalId;
+onload=function(){
+ var links = document.getElementById("tab1").getElementsByTagName('li')
+ links_len=links.length;
+ for(var i=0; i<links_len; i++){
+  links[i].onmouseover=function(){
+   clearInterval(iIntervalId);
+   this.onmouseout=function(){
+    iIntervalId = setInterval(Next,ScrollTime);;
+   }
+  }
+ }
+ document.getElementById("con_"+name_0+"_"+links_len).parentNode.onmouseover=function(){
+  clearInterval(iIntervalId);
+  this.onmouseout=function(){
+   iIntervalId = setInterval(Next,ScrollTime);;
+  }
+ }
+ setTab(name_0,cursel_0);
+ iIntervalId = setInterval(Next,ScrollTime);
+}
+</script>
+
+
+
 <style type="text/css">
 
-@font-face
-{
 
-font-family: 文悦古体仿宋;
-src: url('文悦古体仿宋.otf');
-
-}
 
 body{
 	margin: 0;
-	font-family: 文悦古体仿宋;
+	font-family: 'wygtfs';
 	line-height: 1.5;
 }
 
-#menu ul{
+.menu ul{
 	margin: 0; padding-left: 0; list-style: none;
 	width: 100px;
 }
-#menu ul li{
+.menu ul li{
 	height: 26px; line-height: 26px;
 	border-bottom:1px solid #ccc;
 }
 
-#month{
-
+a{
+	text-decoration: none;
+	color: #333;
 }
+
+
 
 </style>
 
@@ -39,7 +90,7 @@ body{
 <body>
 	<div id="PageNext">
 		<div class="DS1" style="width: 800px; height: 600px; margin: 20px auto;">
-			<div class="left" style="float: left; width: 200px; height: 600px;">
+			<div class="left" style="float: left; width: 240px; height: 600px;">
 				<div>
 					<h1 style="margin: 0">八月三日</h1>
 					<h4 style="margin: 0">二零一七年</h4>
@@ -47,54 +98,280 @@ body{
 					<h4 style="margin: 0">三十三天前</h4>
 					<h4 style="margin-top: 0">遇到了你</h4>
 				</div>
-				<div id="menu">
+				<div class="menu">
 					<ul>
-						<li class="year" style="border-bottom: 0;"><a href="#"></a>二零一七年</li>
-						<li class="month" style="border-bottom: 2px solid #333;"><a href="#"></a>八月·月见</li>
-						<li><a href="#"></a>八月三日</li>
-						<li><a href="#"></a>八月二日</li>
-						<li><a href="#"></a>八月一日</li>
+						<li class="year" style="border-bottom: 0;"><a href="#">二零一七年</a></li>
+						<li class="month" style="border-bottom: 2px solid #333;"><a href="#">八月·月见</a></li>
+						<li id="one1" onclick="setTab('one',9)"><a href="#">八月四日·壹</a></li>
+            <li id="one1" onclick="setTab('one',8)"><a href="#">八月三日</a></li>
+						<li id="one2" onclick="setTab('one',7)"><a href="#">八月二日</a></li>
+						<li id="one3" onclick="setTab('one',6)"><a href="#">八月一日</a></li>
 					</ul>
 					<ul style="margin-top: 20px">
-						<li class="month" style="border-bottom: 2px solid #333;"><a href="#"></a>七月·凉月</li>
-						<li><a href="#"></a>七月三十一日</li>
-						<li><a href="#"></a>七月三十日</li>
-						<li><a href="#"></a>七月二十九日</li>
-						<li><a href="#"></a>七月二十八日</li>
-						<li><a href="#"></a>七月二十七日</li>
+						<li class="month" style="border-bottom: 2px solid #333;"><a href="#">七月·凉月</a></li>
+						<li id="one4" onclick="setTab('one',5)"><a href="#">七月三十一日</a></li>
+						<li id="one5" onclick="setTab('one',4)"><a href="#">七月三十日</a></li>
+						<li id="one6" onclick="setTab('one',3)"><a href="#">七月二十九日</a></li>
+						<li id="one7" onclick="setTab('one',2)"><a href="#">七月二十八日</a></li>
+						<li id="one8" onclick="setTab('one',1)"><a href="#">七月二十七日</a></li>
 					</ul>
 				</div>
 			</div>
-			<div class="right" style="float: left; width: 400px; height: 600px;">
-				<span class="title">二零一七年八月三日</span>
-				<hr style="border-top:3px solid;" />
-				<span>距离一千多公里 第三天</span><br />
-				<span>突然打了一个喷嚏 打开微信 想撩你说是不是想我了</span><br />
-				<span>刚打开 就收到你给我发的信息</span><br />
-				<span>这样的巧合 开心</span><br />
-				<span>你说 我早上发你消息的时候连打四个喷嚏 有趣</span><br />
-				<span>我放假了 会送红豆汤给你</span><br />
-				<span>智障 智障 智障</span><br />
-				<span>不知道该怎么和你道歉 妈的智障</span><br />
-				<span>对不起</span><br />
-				<span>从清晨智障到晚上 大概心思都飞到一千多公里以外</span><br />
-				<span>大学遇到不是那么合拍的舍友 这四年是有多难过</span><br />
-				<span>心疼</span><br />
-				<span>尺八行者 莫因更好 错失当下</span><br />
-				<span>恩 遇到了就抓住 再遇到更好的也只当路人</span><br />
-				<span>认准了 就不会放 遇到了 就不想错过</span><br />
-				<span>你说 *is blind.</span><br />
-				<span>我说 Love is blind.</span><br />
-				<span>你撤回了 我看到了</span><br />
-				<span>你说 不过真的特别感谢你</span><br />
-				<span>我说 这算好人卡吗</span><br />
-				<span>你说 和你聊天很有意思ya</span><br />
-				<span>我看不懂这三句话 你的两句话 惶恐了很久 话题扯开吧</span><br />
-				<span>有得必有失 得什么 失什么</span><br />
-				<span>若得了你 失了世界 精明的摩羯座也会毫不犹豫</span><br />
-				<span>你喜欢JJ</span><br />
-				<span>好像这一版网站要等一会儿才会显示新的字体 还是技术太差</span><br />
-				<br />
+			<div class="menudiv" style="float: left; width: 560px; height: 600px;">
+        <div id="con_one_1">
+					<span class="title">二零一七年八月四日 壹·记昨日</span>
+					<span style="text-align:right; display: block; float: right;">周五</span>
+					<hr style="border-top:3px solid;" />
+					<span># 距离一千多公里 第四天</span><br />
+					<span># 方太是个很有趣的品牌 经常在广告文案看到他们的广告</span><br />
+					<span>有时候就是这样 看见有趣的东西就想去关注 想去学</span><br />
+					<span>三分钟热度的毛病从小到大 没见改观 什么时候可以不这样</span><br />
+					<span># 我说 又不是去看电影的</span><br />
+					<span>你说 乌漆嘛黑的看得见啥 不如去喝茶</span><br />
+					<span>就这么愉快的决定了</span><br />
+					<span>有的时候 就会有这样的错觉 好像你在配合我</span><br />
+					<span>大概我还没睡醒</span><br />
+					<span># ARK上了GQ 有些想念</span><br />
+					<span>不怀念在上海的日子 只是功利的认为那儿会有更好的未来</span><br />
+					<span>功利的我 做什么都会想未来</span><br />
+					<span>大二觉醒那一刻 就给自己定了一个座右铭</span><br />
+					<span>感恩上代 泽被下代</span><br />
+					<span>阶层是有很坚固的界限的 突破很困难</span><br />
+					<span>我想成为那个突破者 把自己家带上新的阶层</span><br />
+					<span>让父母晚年安稳 让后代得以享受我创造的财富</span><br />
+					<span>披荆斩棘 无谓风霜 我经历多少苦难并不在意</span><br />
+					<span>父母好 爱人好 子孙好 我便好</span><br />
+					<span>想的很天真 也很真实</span><br />
+					<span>这才算是真的在做梦吧</span><br />
+					<span>我真的不在意自己怎么样 只希望我在乎的人都好好的</span><br />
+					<span># 你说 给你带小姐姐的零食</span><br />
+					<span>我说 把你自己带回来就好</span><br />
+					<span># 今天你好漂亮</span><br />
+					<span>想办法把照片贴上来</span><br />
+          <span># 很长时间里 我看的各种杂书 接触的三教九流的圈子</span><br />
+          <span>都是我眼界的资本</span><br />
+          <span>直到遇见你 再也施展不开</span><br />
+          <span>hi呀 撩妹手段Lv max—————Lv 0</span><br />
+          <span># 国防大学 金一南 《百年沧桑——从东亚病夫到民族复兴》</span><br />
+          <span>道理我都懂 读史可以明智</span><br />
+          <span>已经多久没有去看百家杂论了 一门心思的功利功利功利</span><br />
+          <span>不能短期收益的 不能直接应用的... 抛弃</span><br />
+          <span>回想起宏伟和我说的 人生需要一点乐趣</span><br />
+          <span>大概和你一起的时候就会什么都不想 小乐趣</span><br />
+          <span># 感谢你的舍友</span><br />
+          <span>让你学会包容与忍耐</span><br />
+          <span>包容我的无趣</span><br />
+          <span># 直男无法理解的化妆</span><br />
+          <span>对别人 化妆了会好看 会喜欢</span><br />
+          <span>对喜欢的人 别化妆 对皮肤不好</span><br />
+          <span>好皮囊随处可见 可你只有一个</span><br />
+          <span>有人喜欢你的颜 有人喜欢你的言</span><br />
+          <span>送你口红亚 每天还我一点呐</span><br />
+          <span># 懵逼树上懵逼果 懵逼树下你和我</span><br />
+          <span>伊甸园里红苹果 伊甸园里你和我</span><br />
+          <span># 这破代码</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+        <div id="con_one_11" style="display:none;">
+					<span class="title">二零一七年八月三日</span>
+					<span style="text-align:right; display: block; float: right;">周四</span>
+					<hr style="border-top:3px solid;" />
+					<span>距离一千多公里 第三天</span><br />
+					<span>突然打了一个喷嚏 打开微信 想撩你说是不是想我了</span><br />
+					<span>刚打开 就收到你给我发的信息</span><br />
+					<span>这样的巧合 开心</span><br />
+					<span>你说 我早上发你消息的时候连打四个喷嚏 有趣</span><br />
+					<span>我放假了 会送红豆汤给你</span><br />
+					<span>智障 智障 智障</span><br />
+					<span>不知道该怎么和你道歉 妈的智障</span><br />
+					<span>对不起</span><br />
+					<span>从清晨智障到晚上 大概心思都飞到一千多公里以外</span><br />
+					<span>大学遇到不是那么合拍的舍友 这四年是有多难过</span><br />
+					<span>心疼</span><br />
+					<span>尺八行者 莫因更好 错失当下</span><br />
+					<span>恩 遇到了就抓住 再遇到更好的也只当路人</span><br />
+					<span>认准了 就不会放 遇到了 就不想错过</span><br />
+					<span>你说 *is blind.</span><br />
+					<span>我说 Love is blind.</span><br />
+					<span>你撤回了 我看到了</span><br />
+					<span>你说 不过真的特别感谢你</span><br />
+					<span>我说 这算好人卡吗</span><br />
+					<span>你说 和你聊天很有意思ya</span><br />
+					<span>我看不懂这三句话 你的两句话 惶恐了很久 话题扯开吧</span><br />
+					<span>有得必有失 得什么 失什么</span><br />
+					<span>若得了你 失了世界 精明的摩羯座也会毫不犹豫</span><br />
+					<span>你喜欢JJ</span><br />
+					<span>好像这一版网站要等一会儿才会显示新的字体 还是技术太差</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_10" style="display:none;">
+					<span class="title">二零一七年八月二日</span>
+					<span style="text-align:right; display: block; float: right;">周三</span>
+					<hr style="border-top:3px solid;" />
+					<span>距离一千多公里 第二天</span><br />
+					<span>距离产生美 个鬼哦 我拒绝</span><br />
+					<span>仍旧当做你还不知道这里的小秘密 继续这样写下去</span><br />
+					<span>重新捡起CSS和HTML 想把这个网页做得越来越好 它是送你的第一个礼物</span><br />
+					<span>摩羯座是个什么样的星座 射手座又是什么样的星座</span><br />
+					<span>我不懂</span><br />
+					<span>只晓得我是什么样的人 想要了解你是什么样的人 想让你了解我是什么样的人</span><br />
+					<span>工作狂 重事业 重功利...</span><br />
+					<span>都有都有 典型摩羯</span><br />
+					<span>敏感自卑 沉溺黑暗 极端矛盾</span><br />
+					<span>都有都有 典型摩羯</span><br />
+					<span>容易相信人 对我一分好 百倍回报</span><br />
+					<span>认准了 就不会放 遇到了 就不想错过</span><br />
+					<span>只要我有 只要你要</span><br />
+					<span>非典型摩羯 或者说 摩羯座的我</span><br />
+					<span>外形上无所谓 只要合得来 反正外形也是0分水平 多下点心思逗你开心好了</span><br />
+					<span>每次聊到这种奇奇怪怪的话题 都会不知道说什么</span><br />
+					<span>有点儿不敢 有点懦弱</span><br />
+					<span>有冲动一口气认真说完喜欢你算了 不用再字句斟酌 找一句接得上又不那么明显的话</span><br />
+					<span>下一次 当面说 牵着手就跑</span><br />
+					<span>诶 害怕挠痒痒</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_9" style="display:none;">
+					<span class="title">二零一七年八月一日</span>
+					<span style="text-align:right; display: block; float: right;">周二</span>
+					<hr style="border-top:3px solid;" />
+					<span>你的过去我不过问</span><br />
+					<span>你的未来我全包</span><br />
+					<span>我啊 不会说话 只是在规划未来的时候把你算进去了</span><br />
+					<span>思想在进步 恋爱观却没怎么变过</span><br />
+					<span>喜欢了 有契机 认真谈 不奢求</span><br />
+					<span>你出去浪里个浪啦</span><br />
+					<span>一路小心 玩的开心</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_8" style="display:none;">
+					<span class="title">二零一七年七月三十一日</span>
+					<span style="text-align:right; display: block; float: right;">周一</span>
+					<hr style="border-top:3px solid;" />
+					<span>无论如何抽烟就是错的 我选择上吊</span><br />
+					<span>有那么一些冲动说 我戒烟</span><br />
+					<span>这两年学会了 不说做不到的承诺</span><br />
+					<span>不敢百分之百保证 与其最后失败不如不说</span><br />
+					<span>男人一事无成时的承诺 最是无用</span><br />
+					<span>工科男这个身份注定要给我背一辈子的锅 不粘锅随便甩</span><br />
+					<span>你说 那为啥要牵我手</span><br />
+					<span>工科男的迟钝 这才是最智障的事儿吧</span><br />
+					<span>我说 喜欢你啊</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_7" style="display:none;">
+					<span class="title">二零一七年七月三十日</span>
+					<span style="text-align:right; display: block; float: right;">周日</span>
+					<hr style="border-top:3px solid;" />
+					<span>昨天的我就是智障吧</span><br />
+					<span>有时候会忍不住 就想告诉你</span><br />
+					<span>我喜欢你</span><br />
+					<span>看不见你 会一直看手机</span><br />
+					<span>想给你发信息 又怕被嫌烦</span><br />
+					<span>就是这种忐忑 叫做我喜欢你吧</span><br />
+					<span>看见你</span><br />
+					<span>眼神会出卖我</span><br />
+					<span>昨天的我 大概就是智障</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_6" style="display:none;">
+					<span class="title">二零一七年七月二十九日</span>
+					<span style="text-align:right; display: block; float: right;">周六</span>
+					<hr style="border-top:3px solid;" />
+					<span>窥屏看你们群里聊今天去阿黄家撸猫 没说话</span><br />
+					<span>你问我 撸猫吗</span><br />
+					<span>心情好爆炸 开心</span><br />
+					<span>我每天都有写小日记呐 你看得见的</span><br />
+					<span>啊 在哪里</span><br />
+					<span>不告诉你</span><br />
+					<span>今天听了你唱歌诶</span><br />
+					<span>超好听的</span><br />
+					<span>你喜欢林宥嘉的歌</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_5" style="display:none;">
+					<span class="title">二零一七年七月二十八日</span>
+					<span style="text-align:right; display: block; float: right;">周五</span>
+					<hr style="border-top:3px solid;" />
+					<span>怕打扰你  不敢找你</span><br />
+					<span>你却会来找我</span><br />
+					<span>开心 满足</span><br />
+					<span>你不做给我吃</span><br />
+					<span>大不了 我做给你吃亚</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_4" style="display:none;">
+					<span class="title">二零一七年七月二十七日</span>
+					<span style="text-align:right; display: block; float: right;">周四</span>
+					<hr style="border-top:3px solid;" />
+					<span>这两天</span><br />
+					<span>对你而言工作压力大到爆炸</span><br />
+					<span>对我而言不知如何逗你开心放松压力</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_3" style="display:none;">
+					<span class="title">二零一七年七月二十六日</span>
+					<span style="text-align:right; display: block; float: right;">周三</span>
+					<hr style="border-top:3px solid;" />
+					<span>以后还是不看恐怖片了</span><br />
+					<span>以后去玩去吃好吃的，不看电影</span><br />
+					<span>不应该约爱情片嘛，白眼</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_2" style="display:none;">
+					<span class="title">二零一七年七月二十五日</span>
+					<span style="text-align:right; display: block; float: right;">周二</span>
+					<hr style="border-top:3px solid;" />
+					<span>惊喜的偶遇</span><br />
+					<span>嘿 你好漂亮</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_1" style="display:none;">
+					<span class="title">二零一七年七月二十三日</span>
+					<span style="text-align:right; display: block; float: right;">周日</span>
+					<hr style="border-top:3px solid;" />
+					<span>第一次一起看电影《大护法》，以后还会有很多次</span><br />
+					<span>第一次送你回家，以后还会有很多次</span><br />
+					<span>第一次当面说你漂亮，以后还会有很多次</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+
 			</div>
 		</div>
 	</div>
