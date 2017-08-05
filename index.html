@@ -7,7 +7,6 @@
 
 <link rel="stylesheet" type="text/css" href="css/main.css">
 
-
 <script type="text/javascript">
 function setTab(name,cursel){
  cursel_0=cursel;
@@ -19,7 +18,7 @@ function setTab(name,cursel){
    menudiv.style.display="block";
   }
   else{
-   menu.className="";
+   menu.className="#";
    menudiv.style.display="none";
   }
  }
@@ -30,43 +29,24 @@ function Next(){
  setTab(name_0,cursel_0);
 }
 var name_0='one';
-var cursel_0=1;
+var cursel_0=14;
 var ScrollTime=3000;//循环周期（毫秒）
 var links_len,iIntervalId;
 onload=function(){
  var links = document.getElementById("tab1").getElementsByTagName('li')
  links_len=links.length;
- for(var i=0; i<links_len; i++){
-  links[i].onmouseover=function(){
-   clearInterval(iIntervalId);
-   this.onmouseout=function(){
-    iIntervalId = setInterval(Next,ScrollTime);;
-   }
-  }
- }
- document.getElementById("con_"+name_0+"_"+links_len).parentNode.onmouseover=function(){
-  clearInterval(iIntervalId);
-  this.onmouseout=function(){
-   iIntervalId = setInterval(Next,ScrollTime);;
-  }
- }
  setTab(name_0,cursel_0);
- iIntervalId = setInterval(Next,ScrollTime);
 }
 </script>
 
 
 
 <style type="text/css">
-
-
-
 body{
 	margin: 0;
-	font-family: 'wygtfs';
+	font-family: '文悦古体仿宋';
 	line-height: 1.5;
 }
-
 .menu ul{
 	margin: 0; padding-left: 0; list-style: none;
 	width: 100px;
@@ -74,11 +54,12 @@ body{
 .menu ul li{
 	height: 26px; line-height: 26px;
 	border-bottom:1px solid #ccc;
+	color: #999;
 }
+.menu li.off{font-weight:bold; color: #000}
 
-a{
-	text-decoration: none;
-	color: #333;
+.menudiv{
+	letter-spacing:1px
 }
 
 
@@ -90,35 +71,132 @@ a{
 <body>
 	<div id="PageNext">
 		<div class="DS1" style="width: 800px; height: 600px; margin: 20px auto;">
-			<div class="left" style="float: left; width: 240px; height: 600px;">
+			<div  class="tab1" id="tab1" style="float: left; width: 240px; height: 600px;">
 				<div>
-					<h1 style="margin: 0">八月三日</h1>
+					<h1 style="margin: 0">八月五日</h1>
 					<h4 style="margin: 0">二零一七年</h4>
 					<br />
-					<h4 style="margin: 0">三十三天前</h4>
-					<h4 style="margin-top: 0">遇到了你</h4>
 				</div>
 				<div class="menu">
 					<ul>
-						<li class="year" style="border-bottom: 0;"><a href="#">二零一七年</a></li>
-						<li class="month" style="border-bottom: 2px solid #333;"><a href="#">八月·月见</a></li>
-						<li id="one1" onclick="setTab('one',9)"><a href="#">八月四日·壹</a></li>
-            <li id="one1" onclick="setTab('one',8)"><a href="#">八月三日</a></li>
-						<li id="one2" onclick="setTab('one',7)"><a href="#">八月二日</a></li>
-						<li id="one3" onclick="setTab('one',6)"><a href="#">八月一日</a></li>
+						<li style="border-bottom: 0; color: #333;">三十五天前</li>
+						<li style="border-bottom: 2px solid #333; color: #333;">遇到了你</li>
+						<li id="one14" onclick="setTab('one',14)"  style="cursor: pointer; border-bottom: 0">灵魂伴侣</li>
+						<br />
+						<li style="border-bottom: 0; color: #333;">二零一七年</li>
+						<li style="border-bottom: 2px solid #333; color: #333;">八月·月见</li>
+						<li id="one13" onclick="setTab('one',13)" style="cursor: pointer;">八月四日·贰</li>
+						<li id="one12" onclick="setTab('one',12)" style="cursor: pointer;">八月四日·壹</li>
+            <li id="one11" onclick="setTab('one',11)" style="cursor: pointer;">八月三日</li>
+						<li id="one10" onclick="setTab('one',10)" style="cursor: pointer;">八月二日</li>
+						<li id="one9" onclick="setTab('one',9)" style="cursor: pointer;">八月一日</li>
 					</ul>
 					<ul style="margin-top: 20px">
-						<li class="month" style="border-bottom: 2px solid #333;"><a href="#">七月·凉月</a></li>
-						<li id="one4" onclick="setTab('one',5)"><a href="#">七月三十一日</a></li>
-						<li id="one5" onclick="setTab('one',4)"><a href="#">七月三十日</a></li>
-						<li id="one6" onclick="setTab('one',3)"><a href="#">七月二十九日</a></li>
-						<li id="one7" onclick="setTab('one',2)"><a href="#">七月二十八日</a></li>
-						<li id="one8" onclick="setTab('one',1)"><a href="#">七月二十七日</a></li>
+						<li class="month" style="border-bottom: 2px solid #333; color: #333;">七月·凉月</li>
+						<li id="one8" onclick="setTab('one',8)" style="cursor: pointer;">七月三十一日</li>
+						<li id="one7" onclick="setTab('one',7)" style="cursor: pointer;">七月三十日</li>
+						<li id="one6" onclick="setTab('one',6)" style="cursor: pointer;">七月二十九日</li>
+						<li id="one5" onclick="setTab('one',5)" style="cursor: pointer;">七月二十八日</li>
+						<li id="one4" onclick="setTab('one',4)" style="cursor: pointer;">七月二十七日</li>
+            <li id="one3" onclick="setTab('one',3)" style="cursor: pointer;">七月二十六日</li>
+            <li id="one2" onclick="setTab('one',2)" style="cursor: pointer;">七月二十五日</li>
+            <li id="one1" onclick="setTab('one',1)" style="cursor: pointer; border-bottom: 0">七月二十三日</li>
 					</ul>
+					<br />
+					<br />
+					<br />
+					<br />
 				</div>
 			</div>
 			<div class="menudiv" style="float: left; width: 560px; height: 600px;">
-        <div id="con_one_1">
+				<div id="con_one_13"  style="display: none;">
+					<span class="title">二零一七年八月四日 贰·记今日</span>
+					<span style="text-align:right; display: block; float: right;">周五</span>
+					<hr style="border-top:3px solid;" />
+					<span># 距离一千多公里 第四天</span><br />
+					<span># 以后 当天晚上十一点半更新</span><br />
+					<span># 你给我发信息的日子 我就会莫名的自然醒</span><br />
+					<span>我的手机 二十四小时开机 除非在外没电</span><br />
+					<span>对你 没有不在服务区 没有正忙请等待 没有暂时无人接听</span><br />
+					<span>虽然二十四小时开机是对所有人 但这话我只会对你说</span><br />
+					<span># 跑了一晚上font-spider的解决方案分割字体</span><br />
+					<span>web-font fontmini fontcreator... 失败失败失败</span><br />
+					<span>喜欢Perfect 不要Good</span><br />
+					<span>没遇到也就罢了 遇到了这字体 尝试尽所有办法前不想妥协</span><br />
+					<span>突然会想 这是不是就是执念</span><br />
+					<span>离开ARK前 Roja和我说 因为可塑性 所以年轻</span><br />
+					<span>恩 有执念 追求完美 所以我才年轻啊 死气沉沉与七老八十何异</span><br />
+					<span>没遇到也就罢了 那就安安稳稳看书写字</span><br />
+					<span>遇到了你 就想和你一起看书写字</span><br />
+					<span># 每次都一眼发现美女</span><br />
+					<span>算是本能吧</span><br />
+					<span>喜欢漂亮 谁都是这样 我反正不能免俗</span><br />
+					<span>喜欢可以 不要猥琐 欣赏可以 不要偷看</span><br />
+					<span>ei 大胸易造是什么 听不懂</span><br />
+					<span>美腿天成说的倒是不错</span><br />
+					<span>我喜欢</span><br />
+					<span># 钱珏天天来二楼逛么</span><br />
+					<span>有些时候 不敢主动去做一些事 因为害怕</span><br />
+					<span>害怕你不喜欢</span><br />
+					<span>其实 应该是害怕失去所以小心翼翼</span><br />
+          <span>以至于 连搭讪都要等待契机 感谢可乐</span><br />
+          <span>0分</span><br />
+          <span># 发了工资就去剪短发</span><br />
+          <span>短发 恩 听到的时候居然想着那就去亚</span><br />
+          <span>曾经喜欢长发的我 喜欢上了短发的你</span><br />
+          <span>忘记了这句话在哪里听到</span><br />
+          <span>因为那个人是你 所以喜欢吧 无关长短</span><br />
+          <span># 关于交互</span><br />
+          <span>漏看了一张图 一天功夫白费 最后的设计还用第一稿</span><br />
+          <span>其实 当初选择设计作为立身之本 并非因为多喜欢</span><br />
+          <span>考虑了太多 规划了太多 选择了这个看似光明的方向</span><br />
+          <span>我的性格 注定不适合经商 不适合从政</span><br />
+          <span>我想实现“财富自由 + X” 看似只有一条技术的路</span><br />
+          <span>技术不用与人打交道 不用在意人情世故 纯靠自己</span><br />
+          <span>正好也接触了设计 就这么定下来了</span><br />
+          <span>后来发现 所谓的我以为我不成功只是因为我不够努力</span><br />
+          <span>全是扯淡 技术这事儿也看天赋 比其他因素更难</span><br />
+          <span>有的时候会莫名羡慕浩然在清水的工作 即便是工地</span><br />
+          <span>大概是因为懒 那活儿不用动脑</span><br />
+          <span>人总是羡慕其他人 越活越回去了</span><br />
+          <span>曾经清晰明了的职业规划 现在变得模糊不堪</span><br />
+          <span>慢慢在改正 计划终究只是计划 还得看我自己</span><br />
+          <span>Go ahead.</span><br />
+          <span># 小姐姐发了那么多狗粮 你会不会羡慕</span><br />
+          <span>想想 我似乎也做不了什么</span><br />
+          <span>在写网站的时候 一开始随手写一个网站 给你个惊喜</span><br />
+          <span>现在呢 到底是在满足我的技术欲 还是在继续给你日常温暖</span><br />
+					<span>唔 是后者</span><br />
+					<span>我这么懒得人 写网站还不如去睡觉</span><br />
+					<span>我这么功利 代码和我日后规划又不在一条线上</span><br />
+					<span>只是想给你写这些日常的时候 能够有一些小惊喜 能够每天都有一点点</span><br />
+					<span>告诫自己 不要做呆头呆脑的的工科男 沉溺于最后的所谓的成果</span><br />
+					<span>你开心才是最重要</span><br />
+					<span># 我只有我的世界 你来吗</span><br />
+					<span># 我说 今天上了些什么课</span><br />
+					<span>你说 小姐姐男朋友问她今天上了什么课</span><br />
+					<span>你说 我的话居然让你有有男朋友的错觉</span><br />
+					<span>我说 //的错觉</span><br />
+					<span># 化妆这个话题其实蛮简单的</span><br />
+					<span>我是个普通人 喜欢漂亮的女孩</span><br />
+					<span>那个女孩是路人 与我无关 纯当眼福</span><br />
+					<span>那个女孩是特殊的一个 那我在意的就不是漂亮与否 更在意内里</span><br />
+					<span>你是特殊的那个</span><br />
+					<span># 每天写这些的时候 都告诉自己 你看不到</span><br />
+					<span>不要刻意逢迎去写你喜欢的话 去刻意撩拨你</span><br />
+					<span>这些就是我今天遇到的事儿 我今天所想的事儿</span><br />
+					<span>以前写日记 会从本我自我超我三个角度去辩证看待每一件事</span><br />
+					<span>绝不在日记里欺瞒自己 绝对写下最真实的想法 是我日记的红线</span><br />
+					<span># 给你的 都只给你一个人 哪怕是一句话也不会再有第二个人得到</span><br />
+					<span>再过两年 那时候也早被社会磨灭了少年心吧</span><br />
+					<span>那会儿 宁愿花个千八百买礼物 也不愿意挖空心思写封情书逗你开心</span><br />
+          <span># 别忘了补请周一的假</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div id="con_one_12" style="display: none;">
 					<span class="title">二零一七年八月四日 壹·记昨日</span>
 					<span style="text-align:right; display: block; float: right;">周五</span>
 					<hr style="border-top:3px solid;" />
@@ -240,7 +318,7 @@ a{
 					<span>有点儿不敢 有点懦弱</span><br />
 					<span>有冲动一口气认真说完喜欢你算了 不用再字句斟酌 找一句接得上又不那么明显的话</span><br />
 					<span>下一次 当面说 牵着手就跑</span><br />
-					<span>诶 害怕挠痒痒</span><br />
+					<span>ei 害怕挠痒痒</span><br />
 					<br />
 					<br />
 					<br />
@@ -255,7 +333,7 @@ a{
 					<span>我啊 不会说话 只是在规划未来的时候把你算进去了</span><br />
 					<span>思想在进步 恋爱观却没怎么变过</span><br />
 					<span>喜欢了 有契机 认真谈 不奢求</span><br />
-					<span>你出去浪里个浪啦</span><br />
+					<span>你出去浪里个浪</span><br />
 					<span>一路小心 玩的开心</span><br />
 					<br />
 					<br />
@@ -271,8 +349,8 @@ a{
 					<span>这两年学会了 不说做不到的承诺</span><br />
 					<span>不敢百分之百保证 与其最后失败不如不说</span><br />
 					<span>男人一事无成时的承诺 最是无用</span><br />
-					<span>工科男这个身份注定要给我背一辈子的锅 不粘锅随便甩</span><br />
-					<span>你说 那为啥要牵我手</span><br />
+					<span>工科男这个身份注定要给我背一辈子的锅 不粘锅随便扔</span><br />
+					<span>你说 那为什么要牵我手</span><br />
 					<span>工科男的迟钝 这才是最智障的事儿吧</span><br />
 					<span>我说 喜欢你啊</span><br />
 					<br />
@@ -289,7 +367,7 @@ a{
 					<span>我喜欢你</span><br />
 					<span>看不见你 会一直看手机</span><br />
 					<span>想给你发信息 又怕被嫌烦</span><br />
-					<span>就是这种忐忑 叫做我喜欢你吧</span><br />
+					<span>就是这种tan te 叫做我喜欢你吧</span><br />
 					<span>看见你</span><br />
 					<span>眼神会出卖我</span><br />
 					<span>昨天的我 大概就是智障</span><br />
@@ -302,13 +380,13 @@ a{
 					<span class="title">二零一七年七月二十九日</span>
 					<span style="text-align:right; display: block; float: right;">周六</span>
 					<hr style="border-top:3px solid;" />
-					<span>窥屏看你们群里聊今天去阿黄家撸猫 没说话</span><br />
-					<span>你问我 撸猫吗</span><br />
+					<span>窥屏看你们群里聊今天去阿黄家lu猫 没说话</span><br />
+					<span>你问我 lu猫吗</span><br />
 					<span>心情好爆炸 开心</span><br />
 					<span>我每天都有写小日记呐 你看得见的</span><br />
 					<span>啊 在哪里</span><br />
 					<span>不告诉你</span><br />
-					<span>今天听了你唱歌诶</span><br />
+					<span>今天听了你唱歌ei</span><br />
 					<span>超好听的</span><br />
 					<span>你喜欢林宥嘉的歌</span><br />
 					<br />
@@ -377,6 +455,67 @@ a{
 					<br />
 					<br />
 				</div>
+				<div id="con_one_14">
+					<span class="title">你相信有灵魂伴侣吗</span>
+					<span style="text-align:right; display: block; float: right;">现在我信</span>
+					<hr style="border-top:3px solid;" />
+					<span>125万人生活在这个城市</span><br />
+					<span>其中1/2是男性</span><br />
+					<span>那么就剩下62.5万人</span><br />
+					<span>然后 我想你大概会更愿意和年龄相仿的男性交往</span><br />
+					<span>大概有1/4吧</span><br />
+					<span>现在还有15万人了</span><br />
+					<span>这些人也不会全是单身吧</span><br />
+					<span>最多也就一半</span><br />
+					<span>那么仍有7.5万人</span><br />
+					<span>但你也会有自己的要求和骄傲</span><br />
+					<span>你还是蛮挑剔的</span><br />
+					<span>你同意吧</span><br />
+					<span>那么 这些人中又有多少能入你的法眼呢</span><br />
+					<span>20个里能有一个就不错了 是吧</span><br />
+					<span>这样算下来还有几个呢</span><br />
+					<span>个单身又有魅力的候选人</span><br />
+					<span>从我们这座125万人的城市脱颖而出</span><br />
+					<span>这与这些人的交往中 你会对多少人厌倦呢</span><br />
+					<span>我想 大多数吧</span><br />
+					<span>所以 是不是可以这么说</span><br />
+					<span>大概1/20的人会让你觉得有趣</span><br />
+					<span>他们都会觉得你有魅力</span><br />
+					<span>没人会认为你无趣的</span><br />
+					<span>那么 这么多人中有几个愿意给你做早餐</span><br />
+					<span>愿意给你买卫生巾</span><br />
+					<span>愿意逗你开心</span><br />
+					<span>没准 1/10吧</span><br />
+					<span>现在我们还剩18.75个</span><br />
+					<span>18个人</span><br />
+					<span>接下来的事就是来不来电</span><br />
+					<span>比如是否相信同样的事情</span><br />
+					<span>是否喜欢同样的音乐和电影</span><br />
+					<span>等等</span><br />
+					<span>所以 如果运气好的话</span><br />
+					<span>和你兴趣相同的人大概有 我猜不到</span><br />
+					<span>假设一下 大概1/30</span><br />
+					<span>1/30人啊</span><br />
+					<span>现在是多少人了呢</span><br />
+					<span>0.6</span><br />
+					<span>这125万人的城市里只有</span><br />
+					<span>你要如何遇见这个人呢</span><br />
+					<span>命运吧</span><br />
+					<span>只是</span><br />
+					<span>刚开始似乎所有证明都是对的</span><br />
+					<span>但如果存在变量 X 的话</span><br />
+					<span>也许</span><br />
+					<span>也许命运就是那个变量呢</span><br />
+					<span>也许吧</span><br />
+					<br />
+					<span>0.6 * X = 1</span><br />
+					<span>遇见你真好</span><br />
+					<span>白茶清欢别无事</span><br />
+					<span>我在等风也等你</span><br />
+					<br />
+					<br />
+					<br />
+					<br />
 
 			</div>
 		</div>
