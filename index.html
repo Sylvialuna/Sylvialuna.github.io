@@ -52,7 +52,43 @@ onload=function(){
  var links = document.getElementById("tab1").getElementsByTagName('li')
  links_len=links.length;
  setTab(name_0,cursel_0);
-}
+};
+
+// window.onload=function(){
+// var now = new Date();
+// var date = now.getFullYear() + "-" + (now.getMonth()+1) + "-" + now.getDate();
+// var dateStr = date.toString().split("-");
+// var arr = ['零','一','二','三','四','五','六','七','八','九'];
+// var arr2 = ['百']
+// var y = dateStr[0];
+// var m = dateStr[1];
+// var d = dateStr[2];
+// var y_ = '';
+// var m_ = '';
+// var d_ = '';
+// var ds_ = '';
+// for (var i = 0; i < y.length; i++) {
+//   y_ += arr[y.charAt(i)]
+// };
+//
+//
+//   m.charAt(1) == '0' ? m_='十月' : m == '1' ? m_='一月' : m.charAt(0) == '1' ? m_ = '十'+arr[m.charAt(1)]+'月' : m_=arr[m.charAt(0)]+'月';
+//   d.charAt(1) == '0' ? (d.charAt(0) == '1' ? d_='十日' : d_=arr[d.charAt(0)]+'十日') : d.length == 1 ? d_=arr[d.charAt(0)]+'日' : d.charAt(0) == 1 ? d_='十'+arr[d.charAt(1)]+'日' :d_=arr[d.charAt(0)]+'十'+arr[d.charAt(1)]+'日';
+//
+//   var date1=new Date();  //开始时间
+//   date1.setFullYear(2017,6,2)
+//   var date2=new Date();    //结束时间
+//   var date3=date2.getTime()-date1.getTime()  //时间差的毫秒数
+//   var days=Math.floor(date3/(24*3600*1000))
+//   var ds=days.toString()
+//
+//   ds.charAt(1) == '0' ? ds_='零'+arr[ds.charAt(2)] : ds_=arr[ds.charAt(1)]+'十'+arr[ds.charAt(2)]
+//
+// document.getElementById("year").innerHTML=y_+'年';
+// document.getElementById("day").innerHTML=m_+d_;
+// document.getElementById("days").innerHTML='一百'+ds_+'天';
+// }
+
 </script>
 
 
@@ -88,13 +124,13 @@ body{
 		<div class="DS1" style="width: 800px; height: 600px; margin: 20px auto;">
 			<div  class="tab1" id="tab1" style="float: left; width: 240px; height: 600px;">
 				<div>
-					<h1 id="day" style="margin: 0">十月九日</h1>
+					<h1 id="day" style="margin: 0">十月十一日</h1>
 					<h4 id="year" style="margin: 0">二零一七年</h4>
 					<br />
 				</div>
 				<div class="menu">
 					<ul>
-						<li style="border-bottom: 0; color: #333;">九十九天前</li>
+						<li id="days" style="border-bottom: 0; color: #333;">一百零一天前</li>
 						<li style="border-bottom: 2px solid #333; color: #333;">遇到了你</li>
 						<li id="one19" onclick="setTab('one',19)"  style="cursor: pointer; border-bottom: 0">灵魂伴侣</li>
             <li id="one17" onclick="setTab('one',17)" style="cursor: pointer; border-bottom: 0">愿五年不后悔</li>
@@ -115,6 +151,7 @@ body{
             <br />
             <br />
             <li style="border-bottom: 2px solid #333; color: #333;">十月·时雨</li>
+            <li id="one93" onclick="setTab('one',93)" style="cursor: pointer;">十月九日</li>
             <li id="one92" onclick="setTab('one',92)" style="cursor: pointer;">十月八日</li>
             <li id="one89" onclick="setTab('one',89)" style="cursor: pointer;">十月七日</li>
             <li id="one88" onclick="setTab('one',88)" style="cursor: pointer;">十月六日</li>
@@ -209,6 +246,134 @@ body{
 				</div>
 			</div>
 			<div class="menudiv" style="float: left; width: 560px; height: 600px;">
+        <div id="con_one_93"  style="display: none;">
+          <span class="title">二零一七年十月九日</span>
+          <span style="text-align:right; dispyaolay: block; float: right;">周一</span>
+          <hr style="border-top:3px solid;" />
+          <span># 今天是认识你第99天啦</span><br />
+          <span>明天就是100天了！</span><br />
+          <span># 你又走了</span><br />
+          <span>出发了？</span><br />
+          <span>在路上了</span><br />
+          <span>嗯嗯 车子准点到达 准时出发</span><br />
+          <span>哎 为了不立Flag 强行没有不</span><br />
+          <span>车站人虽然多 但不用排队</span><br />
+          <span>给张家港客运站打call</span><br />
+          <span>张家港客运站还是很厉害的</span><br />
+          <span># 周五师傅请客吃长江鲜</span><br />
+          <span>哇 羡慕 羡慕 羡慕</span><br />
+          <span>周六过来带你去吃好吃的亚 挑好要吃啥哦 我只负责带钱包</span><br />
+          <span>我要和珏儿玩</span><br />
+          <span>她已经被我买通了 你别妄想了</span><br />
+          <span>还有短鱼</span><br />
+          <span>短鱼不会失约的 嗯 先立个Flag</span><br />
+          <span>捂脸 确实不会 就是迟到啊什么比较正常 或者失联</span><br />
+          <span>肯定约不到 就这样 哼</span><br />
+          <span># 完全没堵</span><br />
+          <span>想太多了</span><br />
+          <span>哈哈哈 我说的吧 九号都上班啦</span><br />
+          <span>嗯嗯</span><br />
+          <span>不堵最好亚 能安安心心到扬州吃个午饭</span><br />
+          <span>还拎了袋零食... 现在还不饿...</span><br />
+          <span>就当扬州补给 天天晚上吃 吃成一个胖纸</span><br />
+          <span>拒绝 等小姐姐来了款待她</span><br />
+          <span>怎么吃都不胖的 不信你试试这样吃一个月 不会胖的 想吃啥就吃啥</span><br />
+          <span>呵 信你有鬼</span><br />
+          <span>否 该信我的时候要信的亚</span><br />
+          <span># 爱得太满</span><br />
+          <span>你给我发了一篇推送 《还好我不那么爱你，所以我们才能长久在一起》</span><br />
+          <span>是否爱得太满真的是一件错事</span><br />
+          <span>就像你说 会在爱情中失去自我</span><br />
+          <span>在我们在一起后的几天 我就发现你好像已经进入了你说的这个状态</span><br />
+          <span>你把它归结为热恋期</span><br />
+          <span>我想了想我自己 似乎 我一直都是这个状态</span><br />
+          <span>从开始喜欢你到现在 到以后都是这样</span><br />
+          <span>我猜 是我们都很在乎彼此</span><br />
+          <span>热恋过后 开始磨合 磨合过后 开始平淡</span><br />
+          <span>鸡飞狗跳的磨合 挺过痛苦烦恼与委屈 珍惜欢愉和欣喜</span><br />
+          <span>发现 我还是那个你喜欢的我</span><br />
+          <span>那就好了亚</span><br />
+          <span>我们会长长久久的</span><br />
+          <span>至于结不结婚这个话题</span><br />
+          <span>按你喜欢的来 爸妈那边我去说</span><br />
+          <span>你说 等你想了也不结 对吧</span><br />
+          <span>我说 等你想了就求婚呐</span><br />
+          <span>[撤回] 现在就想</span><br />
+          <span>那周末回来吧 我去你家</span><br />
+          <span>哈哈哈哈 逗你的</span><br />
+          <span>恩 我不是逗你的</span><br />
+          <span># 忘记填出差计划了</span><br />
+          <span>现在那电脑出来还是待会到宾馆了再弄亚</span><br />
+          <span>[截图]</span><br />
+          <span>行动派</span><br />
+          <span>怕待会忘了...</span><br />
+          <span>有我在 能忘了啥事儿诶</span><br />
+          <span>一个人在外面还是要靠自己</span><br />
+          <span>好好学习 争取明年就是两个人在外面</span><br />
+          <span>哈哈哈哈 三个人在外面</span><br />
+          <span>今年一个人 明年两个人 后年三个人回家</span><br />
+          <span>？？？ 我说和珏儿一起啊</span><br />
+          <span>晓得</span><br />
+          <span>你是不是想太多了</span><br />
+          <span>我只是顺着你的思路 调戏你一波</span><br />
+          <span>哼</span><br />
+          <span># 东园的青椒肉丝拌面</span><br />
+          <span>真要把东园吃个遍</span><br />
+          <span>当时点的时候 服务员说只要这个嘛</span><br />
+          <span>我想一份面还吃不饱嘛 果然没吃饱</span><br />
+          <span>哈哈哈哈 看你的身型 一份并不够亚</span><br />
+          <span>量少... 虽然不饱 也不饿</span><br />
+          <span>没晚饭吃亚</span><br />
+          <span>回酒店还吃了个梨</span><br />
+          <span>那晚上偷偷地买奶茶喝</span><br />
+          <span>我有小零食啊</span><br />
+          <span>总感觉你吃不饱</span><br />
+          <span>少食多餐</span><br />
+          <span>多吃多吃</span><br />
+          <span># 我的小可爱在吗</span><br />
+          <span>在忙</span><br />
+          <span>长得越美 责任越重</span><br />
+          <span>继续继续 我就是有点儿想你了</span><br />
+          <span># 突然忙的飞起</span><br />
+          <span>一样一样慢慢来</span><br />
+          <span>暂时没问题了</span><br />
+          <span>辛苦啦 给你敲敲腿</span><br />
+          <span>出来混的 都要还的</span><br />
+          <span>八天浪起来了</span><br />
+          <span>对啊 假期都没怎么陪奶奶</span><br />
+          <span>这周回来陪陪奶奶？</span><br />
+          <span>回来了也不一定陪奶奶啊</span><br />
+          <span>我不来骚扰你就好了呀</span><br />
+          <span>哪次不是去露了一下脸就和你一起散步两小时</span><br />
+          <span>我的错我的错</span><br />
+          <span>哦 昨天... 哦 算上车里的也有两小时 你看看你</span><br />
+          <span>都是我的错 要多陪陪奶奶...</span><br />
+          <span>改不改？</span><br />
+          <span>改。</span><br />
+          <span>不信</span><br />
+          <span>骑小电驴过来</span><br />
+          <span>啊</span><br />
+          <span>那不就没有车了么</span><br />
+          <span>哈哈哈哈 有道理</span><br />
+          <span>再说吧</span><br />
+          <span># 身边的同龄人</span><br />
+          <span>差不多都在往结婚靠近</span><br />
+          <span>不羡慕 我过我的生活</span><br />
+          <span>你想结婚 就结 不想 就这样</span><br />
+          <span>都蛮好的 只要过的日子是我想要的那种就好</span><br />
+          <span>我不想 被困死在一座小城 二十来岁看得见四五十岁</span><br />
+          <span># 默认地址</span><br />
+          <span>买了几支笔 又用的你的名字</span><br />
+          <span>你是默认我收货地址了嘛</span><br />
+          <span>对 你就是默认呐</span><br />
+          <span># 想看腿吗</span><br />
+          <span>想</span><br />
+          <span>那你就想想吧</span><br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
         <div id="con_one_92"  style="display: none;">
           <span class="title">二零一七年十月八日</span>
           <span style="text-align:right; dispyaolay: block; float: right;">周日</span>
